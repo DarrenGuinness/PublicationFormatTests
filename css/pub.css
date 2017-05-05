@@ -9,6 +9,7 @@
     padding-top: 1em;
   }
 }
+
 body {
   -webkit-column-count: 2;
   -moz-column-count: 2;
@@ -512,12 +513,48 @@ cite a {
   content: "Definition " counter(definition) ". ";
   font-style: italic;
 }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
 @media screen {
-  .authors {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
+  html {
+    font-size: 12pt;
   }
+
+  body {
+    column-count: 1;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 40px;
+  }
+
+  p, li {
+    line-height: 1.5;
+  }
+
+  h1.title {
+    margin-bottom: 20px;
+    font-size: 24pt;
+  }
+
+  .author {
+    font-size: 12pt;
+  }
+
+  .author > :first-child,
+  .author > :last-child {
+    font-size: 14pt;
+  }
+
   .copyright {
     display: none;
   }
